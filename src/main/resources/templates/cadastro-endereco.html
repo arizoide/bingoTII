@@ -1,26 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Cadastrar Endereço</title>
 </head>
 <body>
-  <form>
+  <form th:object="${endereco}" action="#"
+        th:action="@{/salvar-endereco}" method="post">
     <label>CEP</label>
-    <input type="text" placeholder="CEP"/>
+    <input type="text" placeholder="CEP" th:field="*{cep}"/>
+    <br>
     <label>Logradouro</label>
-    <input type="text" placeholder="Logradouro"/>
+    <input type="text" placeholder="Logradouro" th:field="*{logradouro}"/>
+    <br>
     <label>Número</label>
-    <input type="text" placeholder="Número"/>
+    <input type="text" placeholder="Número" th:field="*{numero}"/>
+    <br>
     <label>Complemento</label>
-    <input type="text" placeholder="Complemento"/>
+    <input type="text" placeholder="Complemento" th:field="*{complemento}"/>
+    <br>
     <label>Bairro</label>
-    <input type="text" placeholder="Bairro"/>
+    <input type="text" placeholder="Bairro" th:field="*{bairro}"/>
+    <br>
     <label>Cidade</label>
-    <input type="text" placeholder="Cidade"/>
+    <input type="text" placeholder="Cidade" th:field="*{cidade}"/>
+    <br>
     <label>Estado</label>
-    <input type="text" placeholder="Estado"/>
-
+    <input type="text" placeholder="Estado" th:field="*{estado}"/>
+    <br>
     <input type="submit" value="Salvar"/>
   </form>
 </body>
